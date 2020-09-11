@@ -1,0 +1,23 @@
+{
+  "name": "sportsoptimizer",
+  "version": "1.0.0",
+  "description": "Daily fantasy sport optimizer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "",
+  "keywords": [
+    "fantasy",
+    "optimizer",
+    "sports"
+  ],
+  "author": "Michael Cantu",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^10.1.1"
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0"
+  }
+}

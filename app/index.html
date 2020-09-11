@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	
+	<!-- Document Title
+	============================================= -->
+	<title>Sports Optimizer</title>
+
+	<!-- Styles
+	============================================= -->
+	<link href="./static/css/sportsoptimizer.min.css" rel="stylesheet">
+	<!-- ... styles -->
+	
+</head>
+<body>
+
+	<!-- ============================================================== -->
+	<!-- Preload -->
+	<!-- ============================================================== -->
+	<div class="preloader clearfix">
+		<div class="preloader-bg"></div>
+		<div class="preloader-content">
+			<div>
+				<span class="logo-main logo-preloader"></span>
+				<div class="preloader-animation"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================== -->
+	<!-- Window -->
+	<!-- ============================================================== -->
+	<div class="window dash-window clearfix">
+	
+		<!-- ============================================================== -->
+		<!-- Topbar -->
+		<!-- ============================================================== -->
+		<div class="topbar ui menu clearfix">
+			<a href="index.html" class="logo-topbar item"><span class="logo-main-icon"></span> Sports Optimizer</a>
+							
+			<div class="right">			
+				<a class="item" id="minimize" type="button"><i class="im im-minimize" aria-hidden="true"></i></a>
+				<a class="item maximized disabled" type="button"><i class="im im-maximize" aria-hidden="true"></i></a>
+				<a class="item" id="close" type="button"><i class="im im-x-mark" aria-hidden="true"></i></a>
+			</div>
+		</div><!-- ... topbar -->
+		
+		<!-- ============================================================== -->
+		<!-- Bottombar -->
+		<!-- ============================================================== -->			
+		<div class="bottombar clearfix">
+			<div class="ui menu secondary clearfix">
+				<a class="item" data-toggle="modal" 
+				data-target="#modalBuildOptimizer" type="button">
+					<i class="icimg icimg-playerpool" aria-hidden="true"></i> <span>Build</span></a>
+				
+				<div class="item item-spacer"></div>
+
+				<a class="item" type="button">
+					<i class="icimg icimg-lineups" aria-hidden="true"></i> <span>Docs</span></a>	
+				
+				<div class="right">
+					<a class="item" type="button">
+						<i class="icimg icimg-delete" aria-hidden="true"></i> <span>Delete</span></a>
+				</div>
+			</div>			
+		</div><!-- ... bottombar -->
+
+		<!-- ============================================================== -->
+		<!-- Content -->
+		<!-- ============================================================== -->		
+		<div class="window-content dash-window-content clearfix">
+
+			<!-- ============================================================== -->
+			<!-- Main -->
+			<!-- ============================================================== -->				
+			<div class="pane dash-pane clearfix">
+			
+				<!-- ============================================================== -->
+				<!-- Overlay -->
+				<!-- ============================================================== -->	
+				
+				<!-- if optimizers are added remove active -->
+				<div class="dash-nodata-overlay clearfix active">
+					<div class="content">
+						<button class="ui success button" data-toggle="modal" 
+						data-target="#modalBuildOptimizer" type="button">
+							<i class="im im-tools" aria-hidden="true"></i> Build Optimizer</button>
+					</div>
+				</div><!-- ... overlay -->
+
+				<!-- ============================================================== -->
+				<!-- Optimizers -->
+				<!-- ============================================================== -->						
+				<div class="scrollable clearfix">
+					<ul class="dash-optimizerlist clearfix">
+						<li>
+							<div class="list-container">
+								<div class="list-logo-container">
+									<span class="logo-main-icon"></span> 
+								</div>
+								<div class="list-optimizer-name">Optimizer Name 1</div>
+								<div class="list-button-container">
+									<a href="./templates/optimizer.html" class="ui button secondary">
+										<i class="im im-external-link" aria-hidden="true"></i> Open</a>
+									<a class="ui button danger" type="button">
+										<i class="im im-trash-can" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="list-container">
+								<div class="list-logo-container">
+									<span class="logo-main-icon"></span> 
+								</div>
+								<div class="list-optimizer-name">Optimizer Name 2</div>
+								<div class="list-button-container">
+									<a href="" class="ui button secondary">
+										<i class="im im-external-link" aria-hidden="true"></i> Open</a>
+									<a class="ui button danger" type="button">
+										<i class="im im-trash-can" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="list-container">
+								<div class="list-logo-container">
+									<span class="logo-main-icon"></span> 
+								</div>
+								<div class="list-optimizer-name">Optimizer Name 3</div>
+								<div class="list-button-container">
+									<a href="" class="ui button secondary">
+										<i class="im im-external-link" aria-hidden="true"></i> Open</a>
+									<a class="ui button danger" type="button">
+										<i class="im im-trash-can" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div><!-- ... optimizers -->					
+
+			</div><!-- ... pane -->
+		</div><!-- ... window content -->
+	</div><!-- ... window -->
+	
+	<!-- ============================================================== -->
+	<!-- Modal Build Optimizer -->
+	<!-- ============================================================== -->	
+	<div class="faio modal fade" id="modalBuildOptimizer" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+			
+				<div class="modal-header">
+					<div class="modal-title">Build Optimizer</div>
+					<button type="button" class="close" 
+					data-dismiss="modal"><i class="im im-x-mark" aria-hidden="true"></i></button>
+				</div>
+				
+				<div class="modal-body">
+				
+					<div id="optimizer-builder" class="wizard clearfix">
+						<h3>Name</h3>
+						<section>
+							<div class="modal-optimizername clearfix">
+								<div class="ui level clearfix">
+									<h5>Name <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+									data-trigger="hover" data-content="This is your optimizer name"></i></h5>
+								</div>
+								
+								<table class="ui tbl grey optimizername-table">
+									<thead>
+										<tr>
+											<th>Create Optimizer Name</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input id="CreateName" class="name-optimizername" type="text" value="" placeholder="Enter Name..."></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+						
+						<h3>Positions</h3>
+						<section>
+							<div class="modal-positions clearfix">
+								<div class="ui level clearfix">
+									<h5>Positions <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+									data-trigger="hover" data-content="Positions required for a single lineup"></i></h5>
+								</div>
+								
+								<table class="ui tbl grey positions-table">
+									<thead>
+										<tr>
+											<th>Position</th>
+											<th class="right">Delete</th>
+										</tr>
+									</thead>
+									<tbody id="positionsCreated">
+									</tbody>
+								</table>
+								
+								<div class="ui level add-position clearfix">
+									<button  id="Bt_Add_Position" class="ui button success i-left right" type="button">
+										<i class="im im-plus-circle" aria-hidden="true"></i> Add Position</button>
+								</div>
+							</div>				
+						</section>
+						
+						<h3>Rules</h3>
+						<section>
+							<div class="modal-rules clearfix">
+								<div class="ui level clearfix">
+									<h5>Rules <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+									data-trigger="hover" data-content="Rules required for a single lineup"></i></h5>
+								</div>
+								
+								<table class="ui tbl grey rules-table">
+									<thead>
+										<tr>
+											<th>Rule</th>
+											<th class="right">Set</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Minimum Salary Cap <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+											data-trigger="hover" data-content="Minimum salary allowed for a single lineup"></i></td>
+											<td class="right"><input class="rules-minsalary" type="tel" value="0" placeholder="0"></td>
+										</tr>
+										
+										<tr>
+											<td>Maximum Salary Cap <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+											data-trigger="hover" data-content="Maximum salary allowed for a single lineup"></i></td>
+											<td class="right"><input class="rules-maxsalary" type="tel" value="0" placeholder="0"></td>
+										</tr>
+										
+										<tr>
+											<td>Max. Players From 1 Team <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+											data-trigger="hover" data-content="Maximum allowed players from a single team for a single lineup"></i></td>
+											<td class="right">
+												<label>0 if not needed</label>
+												<input class="rules-maxplayers" type="tel" value="0" placeholder="0">
+											</td>
+										</tr>
+										
+										<tr>
+											<td>Min. different teams <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+											data-trigger="hover" data-content="Single lineup must have players from set minimum number of different teams"></i></td>
+											<td class="right">
+												<label>0 if not needed</label>
+												<input class="rules-minteams" type="tel" value="0" placeholder="0">
+											</td>
+										</tr>
+										
+										<tr>
+											<td>No opponent vs <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
+											data-trigger="hover" data-content="No opponent vs. selected position will be added to lineup"></i></td>
+											<td class="right">
+												<label>none if not needed</label>
+												<select class="rules-noopponent">
+												  <option value="">None</option>
+												</select>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>	
+						</section>
+					</div>			
+						
+				</div>
+			</div>
+		</div>
+	</div><!-- ... modal settings -->
+
+</body>
+	<!--   Core JS Files   -->
+	<script>require('../renderer.js')</script>
+	<script>window.$ = window.jQuery = require('./static/js/vendors/jquery.min.js');</script>
+	<script type="text/javascript" src="./static/js/vendors/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="./static/js/vendors/jquery.steps.min.js"></script>
+	<script type="text/javascript" src="./static/js/sportsoptimizer.js"></script>
+</html>
