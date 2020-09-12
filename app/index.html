@@ -212,7 +212,7 @@
 						
 						<h3>Rules</h3>
 						<section>
-							<div class="modal-rules clearfix">
+							<div class="modal-rules clearfix" id="RulesIdInCreating">
 								<div class="ui level clearfix">
 									<h5>Rules <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
 									data-trigger="hover" data-content="Rules required for a single lineup"></i></h5>
@@ -229,13 +229,13 @@
 										<tr>
 											<td>Minimum Salary Cap <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
 											data-trigger="hover" data-content="Minimum salary allowed for a single lineup"></i></td>
-											<td class="right"><input class="rules-minsalary" type="tel" value="0" placeholder="0"></td>
+											<td class="right"><input class="rules-minsalary"  type="number" min="0" oninput="validity.valid||(value='');" value="0" placeholder="0" required></td>
 										</tr>
 										
 										<tr>
 											<td>Maximum Salary Cap <i class="im im-note-o i-info" aria-hidden="true" tabindex="0" data-toggle="popover" 
 											data-trigger="hover" data-content="Maximum salary allowed for a single lineup"></i></td>
-											<td class="right"><input class="rules-maxsalary" type="tel" value="0" placeholder="0"></td>
+											<td class="right"><input class="rules-maxsalary" type="number" min="1" oninput="validity.valid||(value='');" value="1" placeholder="0" required></td>
 										</tr>
 										
 										<tr>
@@ -243,7 +243,7 @@
 											data-trigger="hover" data-content="Maximum allowed players from a single team for a single lineup"></i></td>
 											<td class="right">
 												<label>0 if not needed</label>
-												<input class="rules-maxplayers" type="tel" value="0" placeholder="0">
+												<input class="rules-maxplayers" type="number" min="0" oninput="validity.valid||(value='');" value="0" placeholder="0">
 											</td>
 										</tr>
 										
@@ -252,7 +252,7 @@
 											data-trigger="hover" data-content="Single lineup must have players from set minimum number of different teams"></i></td>
 											<td class="right">
 												<label>0 if not needed</label>
-												<input class="rules-minteams" type="tel" value="0" placeholder="0">
+												<input class="rules-minteams" type="number" min="0" oninput="validity.valid||(value='');" value="0" placeholder="0">
 											</td>
 										</tr>
 										
@@ -261,7 +261,7 @@
 											data-trigger="hover" data-content="No opponent vs. selected position will be added to lineup"></i></td>
 											<td class="right">
 												<label>none if not needed</label>
-												<select class="rules-noopponent">
+												<select class="rules-noopponent" id="rules_noopponent_creation">
 												  <option value="">None</option>
 												</select>
 											</td>
