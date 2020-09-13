@@ -1,5 +1,6 @@
 node_modules
 utput
+dist
 dist/builder-effective-config.yaml
 dist/sportsoptimizer Setup 1.0.0.exe
 dist/sportsoptimizer Setup 1.0.0.exe.blockmap
