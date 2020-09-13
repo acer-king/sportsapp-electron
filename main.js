@@ -1,36 +1,41 @@
-require('electron-reload')(__dirname,{ignored: /data|[\/\\]\./});
+require('electron-reload')(__dirname, { ignored: /data|[\/\\]\./ });
 
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
 
-function createWindow () {
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+let mainWindow;
+
+function createWindow() {
+
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-	width: 992, 
-	height: 630,
-	frame: false,
-	darkTheme: true,
-	backgroundColor: "#03213a",
-	resizable: false,
+
+  mainWindow = new BrowserWindow({
+    width: 992,
+    height: 630,
+    frame: false,
+    darkTheme: true,
+    backgroundColor: "#03213a",
+    resizable: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-	  nodeIntegration: true,
-	  enableRemoteModule: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
-  })
+  });
 
   // and load the index.html of the app.
-  mainWindow.loadFile('./app/index.html')
-
+  mainWindow.loadFile('./app/index.html');
+  // mainWindow.webContents.openDevTools();
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+// Some APIs can only be used after this event occurs.s
+
 app.whenReady().then(() => {
   createWindow()
-  
+
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
